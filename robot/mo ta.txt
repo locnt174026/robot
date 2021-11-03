@@ -1,0 +1,32 @@
+agv.py
+file dieu khien robot
+server.py 
+điều khiển server
+monitor.py
+file vẽ lại hành trình của agv
+-----------------------
+mô tả hoạt động agv:
+sau khi agv khởi động báo trạng thái lên server 
+server cấp đường ban đầu đến điểm nhận hàng 
+sau khi nhận hàng agv hỏi đường vào server
+server trả đường đến điểm đổ hàng cho agv
+agv thực hiện hành trình, vừa đi vừa bắn tọa độ cho monitor và server 
+monitor vẽ lại vị trí của agv
+server sẽ đánh dấu vị trí của tất cả agv
+server trả bản đánh dấu cho agv
+agv trả hàng xong thì hỏi đường server trở về 
+server lại cấp đường cho agv và lập lại trình tự trên 
+---------------------------------
+mô tả bài toán và hướng dẫn thực hiện
+lập trình mô tả hoạt động của agv từ lúc nhận hàng;
+bao gồm báo nhận hàng, server trả đường cho agv
+agv di chuyển và báo cáo vị trí cho server và monitor 50 ms/ lần
+tốc độ agv di chuyển giữa 2 ô là 200 ms
+
+hướng dẫn: nghiên cứu mqtt
+nghiên cứu redis, đường được lưu và lấy ra trên redis thông qua file server.py
+đường sẽ gửi xuống dạng json 
+tạo kênh liên lạc agv và server( 2 chiều ) server cấp đường và bảng đánh dấu  
+tạo kênh giữa agv và monitor (2 chiều): monitor vẽ lại tọa độ agv và ra lệnh ngắt dừng agv khi cần thiết
+chưa cần giao diện chỉ cần console 
+ 
